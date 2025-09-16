@@ -1,5 +1,4 @@
-Prepared by Ivory Plush 	Prepared by Coria Alles 
- 
+
 Introduction 
 # 🌐 SocialHub 
 Mini social media platform (Facebook-like) built with *Django 4.2*.   
