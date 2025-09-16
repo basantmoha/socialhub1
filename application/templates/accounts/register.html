@@ -1,0 +1,326 @@
+{% extends 'accounts/base1.html' %}
+{% block title %}Register{% endblock %}
+{% block styles %}
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background-color: #f0f2f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        margin: auto;
+    }
+
+    .logo {
+        text-align: center;
+        color: #1877f2;
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+
+    .input {
+        margin-bottom: 15px;
+    }
+
+    .input h2 {
+        text-align: center;
+        margin-bottom: 5px;
+        font-size: 22px;
+        color: #333;
+    }
+
+    .input p {
+        text-align: center;
+        color: #555;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .name-fields {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        margin-bottom: 15px;
+
+    }
+
+    .name-fields input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #dddfe2;
+        border-radius: 6px;
+        font-size: 14px;
+        box-sizing: border-box;
+        width: 50%;
+    }
+
+
+    .birthdate {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 5px;
+    }
+
+    .birthdate select {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #dddfe2;
+        border-radius: 6px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .birthdate select:focus {
+        border-color: #1877f2;
+        outline: none;
+    }
+
+
+    .gender-options {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 5px;
+    }
+
+    .gender {
+        flex: 1;
+        border: 1px solid #dddfe2;
+        border-radius: 6px;
+        padding: 8px;
+        text-align: center;
+        cursor: pointer;
+        font-size: 14px;
+        background-color: #fff;
+    }
+
+    .gender input {
+        margin-right: 5px;
+    }
+
+    .gender:hover {
+        border-color: #1877f2;
+    }
+
+    .input input[type="password"],
+    .input input[type="email"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #dddfe2;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .btn {
+        width: 100%;
+        background-color: #42b72a;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #36a420;
+    }
+
+    .login-link {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .login-link a {
+        color: #1877f2;
+        text-decoration: none;
+    }
+
+    .login-link a:hover {
+        text-decoration: underline;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="logo">facebook</h1>
+
+    <form>
+
+        <div class="input header">
+            <h2>Create a new account</h2>
+            <p>It's quick and easy.</p>
+        </div>
+
+        <div class="input name-fields">
+            <input type="text" name="first_name" placeholder="First name" required>
+            <input type="text" name="surname" placeholder="Surname" required>
+        </div>
+
+        <div class="input">
+            <label for="birthdate">Date of Birth</label>
+            <div class="birthdate">
+                <select name="day" id="day" required>
+                    <option value="" disabled selected>Day</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+
+                <select name="month" id="month" required>
+                    <option value="" disabled selected>Month</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+
+                <select name="year" id="year" required>
+                    <option value="" disabled selected>Year</option>
+                    <option value="2025">2025</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
+                    <option value="2015">2015</option>
+                    <option value="2014">2014</option>
+                    <option value="2013">2013</option>
+                    <option value="2012">2012</option>
+                    <option value="2011">2011</option>
+                    <option value="2010">2010</option>
+                    <option value="2009">2009</option>
+                    <option value="2008">2008</option>
+                    <option value="2007">2007</option>
+                    <option value="2006">2006</option>
+                    <option value="2005">2005</option>
+                    <option value="2004">2004</option>
+                    <option value="2003">2003</option>
+                    <option value="2002">2002</option>
+                    <option value="2001">2001</option>
+                    <option value="2000">2000</option>
+                    <option value="1999">1999</option>
+                    <option value="1998">1998</option>
+                    <option value="1997">1997</option>
+                    <option value="1996">1996</option>
+                    <option value="1995">1995</option>
+                    <option value="1994">1994</option>
+                    <option value="1993">1993</option>
+                    <option value="1992">1992</option>
+                    <option value="1991">1991</option>
+                    <option value="1990">1990</option>
+                    <option value="1989">1989</option>
+                    <option value="1988">1988</option>
+                    <option value="1987">1987</option>
+                    <option value="1986">1986</option>
+                    <option value="1985">1985</option>
+                    <option value="1984">1984</option>
+                    <option value="1983">1983</option>
+                    <option value="1982">1982</option>
+                    <option value="1981">1981</option>
+                    <option value="1980">1980</option>
+                    <option value="1979">1979</option>
+                    <option value="1978">1978</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="input">
+            <label>Gender</label>
+            <div class="gender-options">
+                <label class="gender">
+                    <input type="radio" name="gender" value="female" required>
+                    Female
+                </label>
+
+                <label class="gender">
+                    <input type="radio" name="gender" value="male" required>
+                    Male
+                </label>
+            </div>
+        </div>
+
+        <div class="input">
+            <input type="password" id="password" name="password" placeholder="New password" required>
+            <input type="email" id="email" name="email" placeholder="Email address" required>
+        </div>
+
+        <form method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
+            <input type="text" name="first_name" placeholder="First name" required>
+            <input type="text" name="surname" placeholder="Surname" required>
+            <input type="email" name="email" placeholder="Email address" required>
+            <input type="password" name="password" placeholder="New password" required>
+            <button type="submit" class="btn">Sign up</button>
+        </form>
+        <p class="login-link">
+            <a href="{% url 'login' %}">Already have an account?</a>
+        </p>
+
+
+        <p class="login-link">
+            <a href="/login/">Already have an account?</a>
+        </p>
+    </form>
+</div>
+{% endblock %}

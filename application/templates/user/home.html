@@ -1,0 +1,27 @@
+{% extends 'user/base_u.html' %}
+{% block title %}Home{% endblock %}
+{% block styles %}
+    <style>
+        * {
+            box-sizing: border-box;
+            background-color: #05f9e4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .btn {
+            margin: 10px;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <h2>Welcome, {{ user.username }}!</h2>
+        <p>This is your home page</p>
+        <a href="{% url 'create_post' %}" class="btn btn-primary">Create Post</a>
+        <a href="{% url 'profile' user.username %}" class="btn btn-secondary">View Profile</a>
+        <a href="{% url 'logout' %}" class="btn btn-danger">Logout</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'user/base_u.html' %}
+{% block title %}Post Details{% endblock %}
+{% block styles %}
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+        }
+        .img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <h2>Post Details</h2>
+        <p>{{ post.content }}</p>
+        {% if post.image %}
+            <img src="{{ post.image.url }}" alt="Post Image" class="img">
+        {% endif %}
+        <p>Posted by: <a href="{% url 'profile' post.author.username %}">{{ post.author.username }}</a></p>
+        <p>On: {{ post.created_at }}</p>
+        <a href="{% url 'home' %}" class="btn btn-secondary">Back to Home</a>
+    </div>
+{% endblock %}

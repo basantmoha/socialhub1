@@ -1,0 +1,26 @@
+{% extends 'user/base_u.html' %}
+{% block title %}Profile{% endblock %}
+{% block styles %}
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .btn {
+            margin-top: 20px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2>My Profile</h2>
+        <img src="..\imgs\" alt="No Profile Picture">
+        <p>Username: {{ user.username }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Bio: {{ user.bio }}</p>
+        <a href="{% url 'edit_profile' %}" class="btn btn-primary">Edit Profile</a>
+        <a href="{% url 'home' %}" class="btn btn-secondary">Back to Home</a>
+    </div>
+{% endblock %}

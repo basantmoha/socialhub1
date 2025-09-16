@@ -1,0 +1,23 @@
+{% extends 'user/base_u.html' %}
+{% block title %}Edit Profile{% endblock %}
+{% block styles %}
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+        }
+        .btn {
+            margin-top: 20px;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <h2>Edit Your Profile</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ forms.RegisterForm }}
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+    </div>
+{% endblock %}
